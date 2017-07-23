@@ -1,5 +1,6 @@
-create table TEST_CASES (
-  ID int not null,
-  INPUT text not null,
-  OUTPUT text not null
+create table test_cases (
+  id serial not null,
+  problem_id int not null,
+  input text not null,
+  output text not null
 );
