@@ -53,7 +53,7 @@ wait-for-db:
 	@stop_at=30; i=1; while ! $(MAKE) db-is-up 2>/dev/null; do if [ $$i = $$stop_at ]; then exit 1; fi; let i++; sleep 1; echo -n .; done; echo
 
 db-is-up:
-	@psql -h 127.0.0.1 -p 5432 -U postgres -l >/dev/null 2>&1
+	@psql -h 127.0.0.1 -p 5432 -U postgres -l
 
 migrate:
 	flyway migrate
