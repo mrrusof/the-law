@@ -7,7 +7,7 @@ build: .build
 .build: Dockerfile $(shell ls ./sql/*)
 	$(MAKE) clean \
 	        build-the-law-base \
-                run-the-law-base \
+                start-the-law-base \
                 migrate \
                 snapshot \
                 stop-the-law-base
@@ -21,24 +21,30 @@ clean:
 	$(MAKE) rm-the-law-base rm-the-law rmi-the-law-base rmi-the-law
 
 start: build
-	@if docker ps -a | grep 'the-law$$'; then \
-	  $(MAKE) start-the-law; \
-	else \
-	  $(MAKE) run-the-law; \
-	fi
+	$(MAKE) start-the-law
+
+exec: build
+	$(MAKE) exec-the-law
 
 stop: stop-the-law
 
 build-the-law-base:
 	docker build -t the-law-base .
 
-run-%:
-	docker run --name $* -p 5432:5432 -d $*
+start-%:
+	@if docker ps -a | grep 'the-law$$'; then \
+	  docker start $*; \
+	else \
+	  docker run --name $* -p 5432:5432 -d $*; \
+	fi
 	$(MAKE) wait-for-db
 
-start-%:
-	docker start $*
-	$(MAKE) wait-for-db
+exec-%:
+	@if docker ps -a | grep 'the-law$$'; then \
+	  docker start -a $*; \
+	else \
+	  docker run --name $* -p 5432:5432 $*; \
+	fi
 
 stop-%:
 	docker stop $*
