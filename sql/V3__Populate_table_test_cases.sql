@@ -1,4 +1,4 @@
-insert into TEST_CASES (problem_id, input, output) values
+insert into test_cases (problem_id, input, output) values
 
 (1,
 '1
