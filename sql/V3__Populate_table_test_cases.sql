@@ -1,6 +1,7 @@
 insert into test_cases (problem_id, input, output) values
 
-(1,
+(
+'all-balanced-parentheses-strings',
 '1
 0
 3
@@ -17,20 +18,23 @@ insert into test_cases (problem_id, input, output) values
 (())
 '),
 
-(1,
+(
+'all-balanced-parentheses-strings',
 '1
 ',
 '()
 '),
 
-(1,
+(
+'all-balanced-parentheses-strings',
 '2
 ',
 '()()
 (())
 '),
 
-(1,
+(
+'all-balanced-parentheses-strings',
 '3
 ',
 '()()()

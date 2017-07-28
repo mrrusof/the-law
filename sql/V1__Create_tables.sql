@@ -1,5 +1,5 @@
 create table problems (
-  id serial primary key,
+  id text primary key,
   title text not null,
   summary text not null,
   statement text not null,
@@ -7,8 +7,12 @@ create table problems (
 );
 
 create table test_cases (
-  id serial not null,
-  problem_id int not null references problems(id),
+  id serial primary key,
+  problem_id text not null references problems(id),
   input text not null,
   output text not null
+);
+
+create table languages (
+  id text primary key
 );
