@@ -12,7 +12,3 @@ create table test_cases (
   input text not null,
   output text not null
 );
-
-create table languages (
-  id text primary key
-);
