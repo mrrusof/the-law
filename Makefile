@@ -1,17 +1,23 @@
 SHELL=/bin/bash
+REPO=mrrusof/the-law
+TAG=latest
 
-all: test
+all: build
 
 build: .build
 
 .build: Dockerfile $(shell ls ./sql/*)
 	$(MAKE) clean \
-	        build-the-law-base \
-                start-the-law-base \
-                migrate \
-                snapshot \
-                stop-the-law-base
+          build-the-law-base \
+          start-the-law-base \
+          migrate \
+          snapshot \
+          stop-the-law-base
 	touch .build
+
+push: build
+	docker tag the-law $(REPO):$(TAG)
+	docker push $(REPO):$(TAG)
 
 test: build
 	$(MAKE) --keep-going start validate stop
@@ -19,6 +25,7 @@ test: build
 clean:
 	rm -f .build
 	$(MAKE) rm-the-law-base rm-the-law rmi-the-law-base rmi-the-law
+	docker rmi --force mrrusof/the-law || true
 
 start: build
 	$(MAKE) start-the-law
@@ -70,4 +77,4 @@ snapshot:
 validate:
 	flyway validate
 
-.PHONY: build test clean start stop build-the-law-base run-% start-% stop-% rm-% wait-for-db db-is-up migrate snapshot validate
+.PHONY: all build push test clean start stop build-the-law-base run-% start-% stop-% rm-% wait-for-db db-is-up migrate snapshot validate
