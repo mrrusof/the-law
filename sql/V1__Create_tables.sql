@@ -1,5 +1,6 @@
 create table problems (
   id text primary key,
+  timestamp timestamp with time zone not null,
   title text not null,
   summary text not null,
   statement text not null,

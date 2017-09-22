@@ -1,7 +1,8 @@
-insert into problems (id, title, summary, solution_url, statement) values
+insert into problems (id, timestamp, title, summary, solution_url, statement) values
 
 (
 'adjacent-coins',
+'2017-08-31 00:00:00Z',
 'The Adjacent Coins Problem',
 'Choose a coin that maximizes your gain or minimizes your loss, but you have to do it in linear time and constant memory.',
 'http://ruslanledesma.com/2016/02/14/adjacent-coins.html',
