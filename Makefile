@@ -1,5 +1,5 @@
 SHELL=/bin/bash
-REPO=mrrusof/the-law
+REPO_PREFIX=mrrusof
 TAG=latest
 
 all: build
@@ -16,8 +16,7 @@ build: .build
 	touch .build
 
 push: build
-	docker tag the-law $(REPO):$(TAG)
-	docker push $(REPO):$(TAG)
+	docker push $(REPO_PREFIX)/the-law:$(TAG)
 
 test: build
 	$(MAKE) --keep-going start validate stop
@@ -60,6 +59,7 @@ rm-%:
 	docker rm --force $* || true
 
 rmi-%:
+	docker rmi --force $(REPO_PREFIX)/$* || true
 	docker rmi --force $* || true
 
 wait-for-db:
@@ -73,6 +73,7 @@ migrate:
 
 snapshot:
 	docker commit the-law-base the-law
+	docker tag the-law $(REPO_PREFIX)/the-law:$(TAG)
 
 validate:
 	flyway validate
