@@ -4,7 +4,7 @@ create table problems (
   title text not null,
   summary text not null,
   statement text not null,
-  solution_url text not null
+  solution_url text null
 );
 
 create table test_cases (
