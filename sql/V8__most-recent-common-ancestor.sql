@@ -5,7 +5,7 @@ insert into problems (id, timestamp, title, summary, solution_url, statement) va
 '2017-10-12 00:00:00Z',
 'Most Recent Common Ancestor',
 'Given two nodes of a tree, find their most recent common ancestor.',
-NULL,
+'http://ruslanledesma.com/2017/10/13/most-recent-common-ancestor.html',
 'Given two nodes of a tree, find their most recent common ancestor.
 
 **Input.**
