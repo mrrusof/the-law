@@ -1,27 +1,32 @@
 insert into problems (id, timestamp, title, summary, solution_url, statement) values
 
 (
-'most-recent-common-ancestor',
-'2017-10-12 00:00:00Z',
-'Most Recent Common Ancestor',
-'Given two nodes of a tree, find their most recent common ancestor.',
-'http://ruslanledesma.com/2017/10/13/most-recent-common-ancestor.html',
-'Given two nodes of a tree, find their most recent common ancestor.
+'path-count',
+'2017-10-17 00:00:00Z',
+'Path Count',
+'Given a tree of integers, count the downward paths that add up to a given number.',
+NULL,
+'Given a tree of integers, count the downward paths that add up to a
+given number.  A downward path consists of a sequence of nodes such
+that for each node `n` in the path, the successor is one the children
+of `n`.  Consider all downward paths, not only those that start from
+the root or end in a leaf.
 
 **Input.**
-The input consist of one tree.  The first line of input is a pair of
-integers `x` and `y` separated by a space.  `x` and `y` are the nodes
-that you will consider.  The second line of input is a single
-integer `n` which is the count of edges in the tree.  Each one of the
-next `n` lines consist of a pair of integers `a` and `b` separated by a
-space. The pair `a b` corresponds to an edge from `a` and `b`.  The
-following is an example input.
+
+The input consist of a number and a tree.  The first line of input
+consists of numbers `r` and `s` separated by a space.  `r` is the root
+of the tree.  `s` is the sum that you will consider.  The second line
+of input is a single integer `n` which is the count of edges in the
+tree.  Each one of the next `n` lines consist of a pair of integers
+`a` and `b` separated by a space. The pair `a b` corresponds to an edge
+from `a` and `b`.  The following is an example input.
 
 ```asciidoc
-5 7
+2 7
 6
-1 2
-1 3
+2 1
+2 3
 3 4
 4 5
 4 6
@@ -29,11 +34,11 @@ following is an example input.
 ```
 
 **Output.**
-The output consist of a single integer, the most recent common
-ancestor.  The following output corresponds to the example input.
+The output consist of a single integer, the count of downward paths
+that sum `s`.  The following output corresponds to the example input.
 
 ```asciidoc
-4
+2
 ```
 '
 );
@@ -41,8 +46,21 @@ ancestor.  The following output corresponds to the example input.
 insert into test_cases (problem_id, input, output) values
 
 (
-'most-recent-common-ancestor',
-'5 7
+'path-count',
+'2 7
+6
+2 1
+2 3
+3 4
+4 5
+4 6
+6 7
+','2
+'),
+
+(
+'path-count',
+'1 7
 6
 1 2
 1 3
@@ -51,56 +69,54 @@ insert into test_cases (problem_id, input, output) values
 4 6
 6 7
 ',
-'4
+'2
 '),
 
 (
-'most-recent-common-ancestor',
-'5 7
+'path-count',
+'4 7
 6
 1 2
-1 3
-3 4
+3 1
+4 3
 4 5
-5 6
+4 6
 6 7
-',
-'5
-'),
-
-(
-'most-recent-common-ancestor',
-'4 8
-6
-1 2
-2 3
-3 4
-1 6
-6 7
-7 8
-',
-'1
-'),
-
-(
-'most-recent-common-ancestor',
-'7 1
-7
-9 8
-8 3
-8 10
-8 2
-2 1
-2 0
-0 7
 ',
 '2
 '),
 
+(
+'path-count',
+'1 6
+6
+1 3
+1 6
+6 7
+7 8
+3 2
+2 4
+',
+'3
+'),
 
 (
-'most-recent-common-ancestor',
-'4080 8190
+'path-count',
+'3 6
+6
+3 1
+1 6
+6 7
+7 8
+3 2
+2 4
+',
+'2
+'),
+
+(
+'path-count',
+'0 8190
 8190
 0 1
 0 2
@@ -8293,5 +8309,5 @@ insert into test_cases (problem_id, input, output) values
 4094 8189
 4094 8190
 ',
-'254
+'7
 ');
