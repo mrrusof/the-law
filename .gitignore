@@ -1,4 +1,5 @@
 *~
 \#*
 .DS_Store
-.build
+_build
+Gemfile.lock

@@ -6,6 +6,8 @@
 - Docker 17.06
 - PostgreSQL client 9.6.3
 - Flyway 4.2.0
+- Bundler 1.16.2
+- Ruby 2.4.0p0 (2016-12-24 revision 57164) [x86_64-linux]
 
 ## Test
 
