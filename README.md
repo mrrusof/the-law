@@ -13,7 +13,7 @@
 ## Test
 
 ```
-make
+make test
 ```
 
 ## License
