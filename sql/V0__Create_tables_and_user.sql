@@ -13,3 +13,7 @@ create table test_cases (
   input text not null,
   output text not null
 );
+
+create user toj with password 'toj';
+
+grant select on all tables in schema public to toj;
