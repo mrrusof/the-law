@@ -4,13 +4,8 @@ require 'yaml'
 require 'front_matter_parser'
 require_relative 'sql_utils'
 
-class YamlLoader
-  def self.call string
-    YAML.safe_load string, [Date, Time]
-  end
-end
-
-parsed = FrontMatterParser::Parser.parse_file(ARGV[0], loader: YamlLoader)
+loader = FrontMatterParser::Loader::Yaml.new(whitelist_classes: [Date, Time])
+parsed = FrontMatterParser::Parser.parse_file(ARGV[0], loader: loader)
 values = ['id',
           'timestamp',
           'title',
