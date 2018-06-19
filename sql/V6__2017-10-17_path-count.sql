@@ -13,7 +13,6 @@ of `n`.  Consider all downward paths, not only those that start from
 the root or end in a leaf.
 
 **Input.**
-
 The input consist of a number and a tree.  The first line of input
 consists of numbers `r` and `s` separated by a space.  `r` is the root
 of the tree.  `s` is the sum that you will consider.  The second line
