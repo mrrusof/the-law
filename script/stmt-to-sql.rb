@@ -8,6 +8,7 @@ loader = FrontMatterParser::Loader::Yaml.new(whitelist_classes: [Date, Time])
 parsed = FrontMatterParser::Parser.parse_file(ARGV[0], loader: loader)
 values = ['id',
           'timestamp',
+          'edited',
           'title',
           'summary',
           'solution_url',
@@ -26,7 +27,7 @@ end
 values = values.join(",\n  ")
 
 puts <<EOF
-insert into problems (id, timestamp, title, summary, solution_url, statement) values
+insert into problems (id, timestamp, edited, title, summary, solution_url, statement) values
 
 (
   #{values}

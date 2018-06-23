@@ -1,6 +1,7 @@
 ---
 id: watermark
-timestamp: 2018-06-19 00:00:00Z
+timestamp: 2018-06-19 -05:00
+edited: 2018-06-22 -05:00
 title: The Watermark Problem
 summary: Calculate how much water a histogram can hold.
 ---
