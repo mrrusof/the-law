@@ -1,5 +1,25 @@
 id: watermark
 ---
+input: |+
+  
+output: |
+  0
+  
+---
+input: |
+  3 0 2 4
+  
+output: |
+  4
+  
+---
+input: |
+  4 2 0 3
+  
+output: |
+  4
+  
+---
 input: |
   0 1 0 2 0 3 1 2 1 3
   
@@ -68,11 +88,6 @@ input: |
   
 output: |
   0
-  
----
-input: |
-  
-output: |
   
 ---
 input: |
@@ -125,6 +140,7 @@ input: |
   8 7 6 5 4 3 2 1
   -3 -2 -1 0 1 2 3
   3 2 1 0 -1 -2 -3
+  
   3 2 1 0 1 2 3
   
 output: |
@@ -136,6 +152,7 @@ output: |
   1
   8
   8
+  0
   0
   0
   0

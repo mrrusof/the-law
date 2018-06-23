@@ -2,6 +2,27 @@ insert into test_cases (problem_id, input, output) values
 
 (
   'watermark',
+  '
+',
+  '0
+'
+),
+(
+  'watermark',
+  '3 0 2 4
+',
+  '4
+'
+),
+(
+  'watermark',
+  '4 2 0 3
+',
+  '4
+'
+),
+(
+  'watermark',
   '0 1 0 2 0 3 1 2 1 3
 ',
   '8
@@ -72,11 +93,6 @@ insert into test_cases (problem_id, input, output) values
 ),
 (
   'watermark',
-  '',
-  ''
-),
-(
-  'watermark',
   '1 2 3 4 5 6 7 8
 ',
   '0
@@ -126,6 +142,7 @@ insert into test_cases (problem_id, input, output) values
 8 7 6 5 4 3 2 1
 -3 -2 -1 0 1 2 3
 3 2 1 0 -1 -2 -3
+
 3 2 1 0 1 2 3
 ',
   '8
@@ -136,6 +153,7 @@ insert into test_cases (problem_id, input, output) values
 1
 8
 8
+0
 0
 0
 0
