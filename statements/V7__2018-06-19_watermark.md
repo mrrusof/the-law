@@ -24,7 +24,9 @@ the level of water for a given column.
 
 **Input.**
 The input consists of one or more bar graphs.  Each bar graph is given
-on a separate line as a list of space separated integers.
+on a separate line as a list of space separated integers.  Each line
+is terminated by a newline character (`\n`) and the input is
+terminated by EOF.
 
 ```asciidoc
 0 1 0 2 0 3 1 2 1 3
@@ -34,7 +36,8 @@ on a separate line as a list of space separated integers.
 **Output.**
 The output consists of the amount of units of water that each bar
 graph can hold.  Each amount appears in the line that corresponds to
-its graph.  The last character in the output is a newline character.
+its graph.  Each line is terminated by a newline character (`\n`) and
+the output is terminated by EOF.
 
 ```asciidoc
 8
