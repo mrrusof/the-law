@@ -4,6 +4,7 @@ timestamp: 2018-06-19 -05:00
 edited: 2018-06-22 -05:00
 title: The Watermark Problem
 summary: Calculate how much water a histogram can hold.
+solution_url: http://ruslanledesma.com/2018/07/01/the-watermark-problem.html
 ---
 
 You are given a bar graph as a list of integers.  Write a function

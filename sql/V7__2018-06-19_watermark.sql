@@ -6,7 +6,7 @@ insert into problems (id, timestamp, edited, title, summary, solution_url, state
   '2018-06-22 -05:00',
   'The Watermark Problem',
   'Calculate how much water a histogram can hold.',
-  NULL,
+  'http://ruslanledesma.com/2018/07/01/the-watermark-problem.html',
   'You are given a bar graph as a list of integers.  Write a function
 that returns the amount of water the bar graph would hold if you
 poured water over the top.
