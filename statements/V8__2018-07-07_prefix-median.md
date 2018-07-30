@@ -3,6 +3,7 @@ id: prefix-median
 timestamp: 2018-07-07 -05:00
 title: The Prefix Median Problem
 summary: Print the median for each non-empty prefix of a sequence.
+solution_url: http://ruslanledesma.com/2018/07/30/prefix-median.html
 ---
 
 Given a sequence of integers, print the median for each non-empty

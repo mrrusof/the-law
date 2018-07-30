@@ -6,7 +6,7 @@ insert into problems (id, timestamp, edited, title, summary, solution_url, state
   NULL,
   'The Prefix Median Problem',
   'Print the median for each non-empty prefix of a sequence.',
-  NULL,
+  'http://ruslanledesma.com/2018/07/30/prefix-median.html',
   'Given a sequence of integers, print the median for each non-empty
 prefix of the sequence.
 
